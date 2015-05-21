@@ -42,6 +42,34 @@ projects-extra:
                  <p>The Wine Rack API is written in Python using Django and Django-RestFramework.</p>
     img:         img/portfolio/WineRack.jpg
     url:         https://bitbucket.org/cgearhart/wineapp
+
+
+jobs:
+  - title:       Systems Engineer, US Navy<span class='year'> – 2012-Present</span>
+    tasks: 
+      - desc:    Developed safety &amp; technical requirements for next-generation Rocket Assisted Take-Off (RATO) motor.
+      - desc:    Resolved combustion instability in solid fuel rocket motor propellant to eliminate target drone crashes and resume production of legacy RATO motors.
+      - desc:    Lead technical authority of a Joint Capability Technology Demonstration for a new, fixed-wing capable 2.75" rocket guidance section.
+  - title:       Advanced Technology Development, US Navy<span class='year'> – 2010-2012</span>
+    tasks: 
+      - desc:    Developed comparative analysis of all planned US Navy air weapon acquisition investments relative to historical budgets for the Office of the Chief of Naval Operations, Air Warfare division.
+      - desc:    Conducted technology evaluation for next-generation long-range rocket motors &amp; airborne laser weapon demonstrations.
+  - title:       Operations Research Analyst, US Navy<span class='year'> – 2008-2010</span>
+    tasks: 
+      - desc:    Used design of experiments to investigate insensitive munitions (IM) performance of Navy general purpose bombs by conducting a mixed-level, blocked fractional factorial experimental design with centerpoints to evaluate potential bomb liner constituent materials.
+      - desc:    Developed and executed numerical &amp; statistical models for warfare analysis simulations.
+      - desc:    Built a sympathetic detonation model in CTH to simulate IM characteristics for GP bombs.
+  - title:       Academic Projects &amp; Reports (Unpublished)
+    tasks:
+      - desc:    Review of Selected Computer Vision Techniques for Optical Flow, Motion Tracking, &amp; Gesture Recognition (2015)
+      - desc:    Designing an AI Agent to use Visual Reasoning in Solving Raven's Progressive Matrices (2015)
+      - desc:    Reinforcement Learning in Markov Decision Processes (2014)
+      - desc:    Local Randomized Search, Clustering, &amp; Unsupervised Learning Methods (2014)
+      - desc:    Survey of Supervised Learning Methods -- SVM, k-NN, Boosting, Decision Trees, and ANNs (2014)
+      - desc:    Localization Using Ultrasonic Sensors in an Electronic Travel Aid (2007)
+      - desc:    Playing Card Identification Under Similarity Transform Using Geometric Hashing (2007)
+      - desc:    Autonomous Robot using Motorolla MC68HC12 (2006)
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -120,42 +148,19 @@ projects-extra:
         <hr>
         <div class="row-fluid" id="history">
             <div id="jobs" class="span8">
+
+                {% for job in page.jobs %}
                 <div class="job">
-                    <h3>Systems Engineer, US Navy<span class='year'> – 2012-Present</span></h3>
+
+                    <h3>{{ job.title }}</h3>
                     <ul>
-                        <li>•   Developed safety &amp; technical requirements for next-generation Rocket Assisted Take-Off (RATO) motor.</li>
-                        <li>•   Resolved combustion instability in solid fuel rocket motor propellant to eliminate target drone crashes and resume production of legacy RATO motors.</li>
-                        <li>•   Lead technical authority of a Joint Capability Technology Demonstration for a new, fixed-wing capable 2.75" rocket guidance section.</li>
+                        {% for task in job.tasks %}
+                        <li>•   {{ task.desc }} </li>
+                        {% endfor %}
                     </ul>
                 </div>
-                <div class="job">
-                    <h3>Advanced Technology Development, US Navy<span class='year'> – 2010-2012</span></h3>
-                    <ul>
-                        <li>•   Developed comparative analysis of all planned US Navy air weapon acquisition investments relative to historical budgets for the Office of the Chief of Naval Operations, Air Warfare division.</li>
-                        <li>•   Conducted technology evaluation for next-generation long-range rocket motors &amp; airborne laser weapon demonstrations.</li>
-                    </ul>
-                </div>
-                <div class="job">
-                    <h3>Operations Research Analyst, US Navy<span class='year'> – 2008-2010</span></h3>
-                    <ul>
-                        <li>•   Used design of experiments to investigate insensitive munitions (IM) performance of Navy general purpose bombs by conducting a mixed-level, blocked fractional factorial experimental design with centerpoints to evaluate potential bomb liner constituent materials.</li>
-                        <li>•   Developed and executed numerical &amp; statistical models for warfare analysis simulations.</li>
-                        <li>•   Built a sympathetic detonation model in CTH to simulate IM characteristics for GP bombs.</li>
-                    </ul>
-                </div>
-                <div class="job">
-                    <h3>Academic Projects &amp; Reports (Unpublished)</h3>
-                    <ul>
-                        <li>•   Review of Selected Computer Vision Techniques for Optical Flow, Motion Tracking, &amp; Gesture Recognition (2015)</li>
-                        <li>•   Designing an AI Agent to use Visual Reasoning in Solving Raven's Progressive Matrices (2015)</li>
-                        <li>•   Reinforcement Learning in Markov Decision Processes (2014)</li>
-                        <li>•   Local Randomized Search, Clustering, &amp; Unsupervised Learning Methods (2014)</li>
-                        <li>•   Survey of Supervised Learning Methods -- SVM, k-NN, Boosting, Decision Trees, and ANNs (2014)</li>
-                        <li>•   Localization Using Ultrasonic Sensors in an Electronic Travel Aid (2007)</li>
-                        <li>•   Playing Card Identification Under Similarity Transform Using Geometric Hashing (2007)</li>
-                        <li>•   Autonomous Robot using Motorolla MC68HC12 (2006)</li>
-                    </ul>
-                </div>
+                {% endfor %}
+
             </div>
             <div id="education" class="span4">
                 <h3>Education</h3>
