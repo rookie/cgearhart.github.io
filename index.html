@@ -42,6 +42,24 @@ projects-extra:
                  <p>The Wine Rack API is written in Python using Django and Django-RestFramework.</p>
     img:         img/portfolio/WineRack.jpg
     url:         https://bitbucket.org/cgearhart/wineapp
+
+
+jobs:
+  - title:       Systems Engineer<span class='year'> – 2012</span>
+    tasks: 
+      - desc:    Developed safety &amp; technical requirements for next-generation Rocket Assisted Take-Off (RATO) motor.
+      - desc:    Resolved combustion instability in solid fuel rocket motor propellant to eliminate target drone crashes and resume production of legacy RATO motors.
+      - desc:    Lead technical authority of a Joint Capability Technology Demonstration for a new, fixed-wing capable 2.75" rocket guidance section.
+  - title:       Advanced Technology Development<span class='year'> – 2010</span>
+    tasks: 
+      - desc:    Developed comparative analysis of all planned US Navy air weapon acquisition investments relative to historical budgets for the Office of the Chief of Naval Operations, Air Warfare division.
+      - desc:    Conducted technology evaluation for next-generation long-range rocket motors &amp; airborne laser weapon demonstrations.
+  - title:       Operations Research Analyst<span class='year'> – 2008
+    tasks: 
+      - desc:    Used design of experiments to investigate insensitive munitions (IM) performance of Navy general purpose bombs by conducting a mixed-level, blocked fractional factorial experimental design with centerpoints to evaluate potential bomb liner constituent materials.
+      - desc:    Developed and executed numerical &amp; statistical models for warfare analysis simulations.
+      - desc:    Built a sympathetic detonation model in CTH to simulate IM characteristics for GP bombs.
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -120,29 +138,19 @@ projects-extra:
         <hr>
         <div class="row-fluid" id="history">
             <div id="jobs" class="span8">
+
+                {% for job in page.jobs %}
                 <div class="job">
-                    <h3>Systems Engineer<span class='year'> – 2012</span></h3>
+                    <h3>{{ job.title }}</h3>
                     <ul>
-                        <li>•   Developed safety &amp; technical requirements for next-generation Rocket Assisted Take-Off (RATO) motor.</li>
-                        <li>•   Resolved combustion instability in solid fuel rocket motor propellant to eliminate target drone crashes and resume production of legacy RATO motors.</li>
-                        <li>•   Lead technical authority of a Joint Capability Technology Demonstration for a new, fixed-wing capable 2.75" rocket guidance section.</li>
+                        {% for task in job.tasks %}
+                        <li>•   {{ task.desc }} </li>
+                        {% endfor %}
                     </ul>
                 </div>
-                <div class="job">
-                    <h3>Advanced Technology Development<span class='year'> – 2010</span></h3>
-                    <ul>
-                        <li>•   Developed comparative analysis of all planned US Navy air weapon acquisition investments relative to historical budgets for the Office of the Chief of Naval Operations, Air Warfare division.</li>
-                        <li>•   Conducted technology evaluation for next-generation long-range rocket motors &amp; airborne laser weapon demonstrations.</li>
-                    </ul>
-                </div>
-                <div class="job">
-                    <h3>Operations Research Analyst<span class='year'> – 2008</span></h3>
-                    <ul>
-                        <li>•   Used design of experiments to investigate insensitive munitions (IM) performance of Navy general purpose bombs by conducting a mixed-level, blocked fractional factorial experimental design with centerpoints to evaluate potential bomb liner constituent materials.</li>
-                        <li>•   Developed and executed numerical &amp; statistical models for warfare analysis simulations.</li>
-                        <li>•   Built a sympathetic detonation model in CTH to simulate IM characteristics for GP bombs.</li>
-                    </ul>
-                </div>
+                
+                {% endfor %}
+
             </div>
             <div id="education" class="span4">
                 <h3>Education</h3>
